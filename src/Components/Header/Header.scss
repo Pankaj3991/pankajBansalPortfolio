@@ -1,0 +1,104 @@
+@import "../../Assets/colors";
+
+.active{
+    background-color:$primary;
+}
+
+
+.headerContainer{
+    width: 100%;
+    height: 60px;  
+    box-shadow: 0px 3px 5px $primary;
+    background-color: $background;
+    position: sticky;
+    top: 0px;
+    padding: 0 2em;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 100;
+
+    > .subContainer{
+        display: flex;
+        justify-content: space-between;
+
+        >.logo h1{
+            font-weight: bolder;
+            font-family: 'Dancing Script', cursive;
+            color: $primary;
+        }
+
+        >.navbar a{
+            text-decoration: none;
+            padding: 0.5em 1em;
+            border-radius: 10px;
+            color: $text;
+            font-weight: 500;
+            cursor: pointer;
+
+        }
+        .navbar a.active{
+            color:white;
+            &:hover{
+                box-shadow: 1px 4px 8px $black;
+            }
+        }
+        .menuIcon{
+            display: none;
+        }
+        .menuMobile{
+            display: none;
+        }
+    }
+}
+
+
+@media (max-width:992px){
+    .headerContainer{
+        height: 50px;
+        .subContainer{
+            .logo h1{
+                font-size: 1.5em;
+            }
+            .navbar{
+                display: none;
+            }
+            .menuIcon{
+                display: block;
+            }
+            .menuMobile{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 1em 0;
+                position: absolute;
+                top: 50px;
+                right:0;
+                width: 100%;
+                box-shadow: 1px 3px 4px $primary  ;
+                background-color: $background;
+                transition: height 0.5s ease;
+
+                a{
+                    text-decoration: none;
+                    border-radius: 2em;
+                    padding: 1em 3em;
+                    color:$text;
+                    font-weight: 500;
+                    font-size: 1em;
+                    cursor: pointer;
+                }
+                a.active{
+                    color: white;
+
+                    &:hover{
+                        box-shadow: 1px 4px 8px $black;
+                    }
+                }
+                
+            }
+        }
+    }
+}

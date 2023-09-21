@@ -1,0 +1,82 @@
+@import "../../Assets/colors";
+
+.footerContainer{
+    min-height: 300px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    background-color: $secondary;
+
+    .custom-shape-divider-top-1694745762 {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+
+        svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 60;
+        }
+        
+        .shape-fill {
+            fill:$background;
+        }
+    }
+
+    .container{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        
+        .logo{
+            font-size: 2.5em;
+            font-weight: bold;
+            font-family: Dancing Script;
+            color: $primary;
+        }
+
+        .contactInfo .contact div{
+            font-size: 20px;
+            margin-top: 10px;
+            font-weight:500;
+        }
+    }
+
+    .custom2-shape-divider-top-1694745762 {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+
+        svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 60;
+        }
+        
+        .shape-fill {
+            fill:$background;
+        }
+    }
+}
+
+@media (max-width:650px){
+    .footerContainer .container{
+        flex-direction: column;
+
+        .contactInfo .contact div{
+            font-size: 16px;
+        }
+    }
+}

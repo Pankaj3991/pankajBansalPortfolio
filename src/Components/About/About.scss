@@ -1,0 +1,158 @@
+@import "../../Assets/colors";
+
+.aboutContainer{
+    min-height: 100vh;
+    padding: 2em 2em;
+
+    .cardContainer{
+        width: 100%;
+        height: fit-content;
+        margin-top: 3em;
+        display: flex;
+        justify-content: center;
+
+        .cardSubContainer{
+            width: 80vw;
+            min-height: 80vh;
+            border-radius: 1em;
+            box-shadow: 3px 3px 15px $black;
+            padding: 1em;
+            display: flex;
+
+            .photo{
+                height: 100%;
+                width: 100%;
+                margin-right: 2em;
+                // background-color: rgb(222, 222, 173);
+                border-radius: 1em;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 1em;
+                }
+            }
+
+            .aboutMe{
+                margin-top: 3em;
+                margin-left: 3em;
+                .name {
+                    .hello{
+                        font-size: 1em;
+                        font-weight: 400;
+                    }
+
+                    h1{
+                        font-family: Dancing Script;
+                        font-size: 3em;
+                        font-weight: 700;
+                        line-height: 2;
+                    }
+
+                    .profession{
+                        font-size: 1.3em;
+                        line-height: 2.2;
+                        font-weight: 500;
+                    }
+                }
+
+                .quote{
+                    line-height: 1.5;
+                    margin-bottom: 1.5em;
+                }
+                .contactDetail{
+                    font-size: 17px;
+                    font-weight: 400;
+                    line-height: 2;
+                    margin-bottom: 2em;
+                    .icon{
+                        font-size: 20px;
+                        margin-right: 10px;
+                    }
+
+                    a{
+                        text-decoration: none;
+                        color: $primary;
+                        font-size: 18px;
+                        margin-left: 2em;
+                        font-weight: 500;
+                        border: 1px dotted $primary;
+                        border-radius: 1em;
+                        line-height: 3;
+                        padding: 10px;
+                    }
+                }
+                .other{
+                    display: flex;
+                    justify-content: space-around;
+                    .hireMe{
+                        padding: 10px 20px;
+                        color: white;
+                        background-color:$primary;
+                        border-radius: 10px;
+                        width: fit-content;
+                        cursor: pointer;
+                        text-decoration: none;
+    
+                        &:hover{
+                            box-shadow: 2px 2px 10px $black;
+                        }
+                    }
+                    .downloadResume{
+                        @extend .hireMe;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:992px){
+    .aboutContainer{
+        .cardContainer .cardSubContainer{
+            flex-direction: column;
+            align-items: center;
+    
+            .photo{
+                height: 80%;
+                width: 90%;
+            }
+            .aboutMe{
+                width: 75%;
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+@media (max-width:576px){
+    .aboutContainer{
+        padding: 1em 1em;
+        .cardContainer{
+            .cardSubContainer{
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+        
+                .photo{
+                    height: 80%;
+                    width: 90%;
+                    margin-right: 0;
+                }
+                .aboutMe{
+                    width: 95%;
+                    margin-left: 0;
+
+                    .name{
+                        h1{
+                            font-size: 2.5em;
+                        }
+                        .icon{
+                            font-size:18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

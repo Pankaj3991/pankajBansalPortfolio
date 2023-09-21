@@ -1,0 +1,50 @@
+@import "../../Assets/colors";
+
+.cardSkill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // background-color: white;
+    min-width: 200px;
+    min-height: 200px;
+    margin: 1em;
+    padding:4em;
+    border-radius: 1em;
+    box-shadow: 0 0 10px $text;
+
+    h1 {
+        position: absolute;
+    }
+
+    h2 {
+        position: absolute;
+        margin-top: 150px;
+    }
+
+    .progress-ring {
+        transform: rotate(-90deg);
+        /* Start the circle at the top */
+
+        .progress-ring-circle {
+            stroke-dasharray: 325;
+            /* Circumference of the circle (2 * pi * r) */
+            stroke-dashoffset: 325;
+            /* Hide the circle initially */
+            animation: progress 1s linear forwards;
+            /* Duration and easing function */
+
+            @keyframes progress {
+                to {
+                    stroke-dashoffset:calc(325 - (325/100)*var(--radius));
+                }
+            }
+        }
+
+        .progress-ring-circle2 {
+            stroke-dasharray: 325;
+            /* Circumference of the circle (2 * pi * r) */
+            stroke-dashoffset: 0;
+            /* Hide the circle initially */
+        }
+    }
+}
